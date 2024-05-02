@@ -5,13 +5,13 @@
 First, install the necessary python packages (pypdf and reportlab)
 
 ``` bash
-pip install pypdf reportlab
+pip3 install pypdf reportlab
 ```
 
 Or just use the `requirements.txt` file :
 
 ``` bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 Create a `docs` folder and put your PDF files into it.
