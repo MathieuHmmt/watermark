@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from os import remove
 from reportlab.pdfgen import canvas
 from pypdf import PdfReader, PdfWriter
 from os import scandir, path, mkdir
@@ -40,12 +39,12 @@ def add_watermark_to_pdf(input_pdf, output_pdf, watermark_pdf):
 
 # Get input args
 parser = argparse.ArgumentParser()
-
 parser.add_argument("watermark_text")
 parser.add_argument("--opacity", help="Change watermark's text opacity (between 0.1 and 1)", type=float)
 parser.add_argument("--angle", help="Change watermark text's display angle (in degrees)", type=int)
 args = parser.parse_args()
 
+# Add the watermark to every file in the docs directory
 for file in scandir("./docs"):
 	if file.is_file() and ".pdf" in file.path:
 
@@ -56,6 +55,7 @@ for file in scandir("./docs"):
 
 		if not path.isdir("./watermarked"):
 			mkdir("./watermarked")
+			
 		output_pdf_path = f'./watermarked/{file.name}_watermarked.pdf'
 
 		create_watermark(watermark_text, output_pdf_path, angle, opacity)
