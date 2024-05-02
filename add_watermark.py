@@ -50,12 +50,12 @@ for file in scandir("./docs"):
 
 		input_pdf_path = file.path
 		watermark_text = args.watermark_text
-		opacity = args.opacity if args.opacity else 0.25
+		opacity = args.opacity if args.opacity else 0.17
 		angle = args.angle if args.angle else 45
 
 		if not path.isdir("./watermarked"):
 			mkdir("./watermarked")
-			
+
 		output_pdf_path = f'./watermarked/{file.name}_watermarked.pdf'
 
 		create_watermark(watermark_text, output_pdf_path, angle, opacity)
