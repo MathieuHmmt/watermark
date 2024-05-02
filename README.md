@@ -2,6 +2,18 @@
 
 ## Add watermarks to your pdf files
 
+First, install the necessary python packages (pypdf and reportlab)
+
+``` bash
+pip install pypdf reportlab
+```
+
+Or just use the `requirements.txt` file :
+
+```
+pip install -r requirements.txt
+```
+
 Just create a `docs` folder and put your PDF files into it.
 Then you can launch the script with `./add_watermark <watermark_text>` and you will get your watermarked PDFs in the `watermarked` folder.
 You can adjust the opacity and the angle of the watermark text with optional parameters.
