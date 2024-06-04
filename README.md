@@ -2,13 +2,18 @@
 
 ## Add watermarks to your pdf files
 
-First, install the necessary python packages (pypdf and reportlab)
+Download this git repository to get the code on your machine :
+```bash
+git clone https://github.com/MathieuHmmt/watermark.git
+```
+
+Install the necessary python packages (pypdf and reportlab)
 
 ``` bash
 pip3 install pypdf reportlab
 ```
 
-Or just use the `requirements.txt` file :
+Or you can use the `requirements.txt` file :
 
 ``` bash
 pip3 install -r requirements.txt
