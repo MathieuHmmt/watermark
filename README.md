@@ -23,7 +23,7 @@ Create a `docs` folder and put your PDF files into it.
 Then you can launch the script with
 
 ``` bash
- ./add_watermark.py <watermark_text>
+ python3 add_watermark.py <watermark_text>
 ```
 
 and you will get your watermarked PDFs in the `watermarked` folder.
@@ -31,6 +31,6 @@ and you will get your watermarked PDFs in the `watermarked` folder.
 > You can adjust the opacity and the angle of the watermark text with optional parameters.
 
 Example :
-`./add_watermark.py "Confidential" --opacity=0.15 --angle=25`
+`python3 add_watermark.py "Confidential" --opacity=0.15 --angle=25`
 
 > Tips : Use imagemagick to convert or combine images into a pdf with `convert img1 img2 output.pdf`
