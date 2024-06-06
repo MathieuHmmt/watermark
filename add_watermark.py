@@ -2,6 +2,7 @@
 from reportlab.pdfgen import canvas
 from pypdf import PdfReader, PdfWriter
 from os import scandir, path, mkdir
+from os.path import basename
 import argparse
 
 
@@ -62,4 +63,10 @@ for file in scandir("./docs"):
         output_pdf_path = f'./watermarked/{file.name}_watermarked.pdf'
 
         create_watermark(watermark_text, output_pdf_path, angle, opacity)
-        add_watermark_to_pdf(input_pdf_path, output_pdf_path, output_pdf_path)
+        try:
+            add_watermark_to_pdf(input_pdf_path, output_pdf_path, output_pdf_path)
+            print(f"{basename(input_pdf_path)} : Added watermark !")
+        except Exception as error:
+            print(f"{basename(input_pdf_path)} : Failed to add watermark ({error}) ")
+    else:
+        print(f"{basename(file)} is not a pdf file.")
